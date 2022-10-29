@@ -1,0 +1,72 @@
+{
+    "subprocess_count": 6,
+    "approx": {
+        "max_stack_size": 20,
+        "max_test_score": 4000,
+        "save_current_best": true,
+        "calc_prefix": ["math.pi", "EllipseProperties.a", "EllipseProperties.b", "ops.ADD_OP", "ops.MUL_OP"],
+        "constants": {
+            "min_value": 1,
+            "max_value": 11,
+            "step": 1,
+            "include_pi": true,
+            "include_ellipse_properties": true
+        },
+        "filters": {
+            "primitive_subformulas": false
+        }
+    },
+    "plot": {
+        "data": {
+            "dimensions": 1,
+            "min_value": 1,
+            "max_value": 21, 
+            "step": 0.05,
+            "precision": 50
+        },
+        "style_sheet": "plot.mplstyle",
+        "image_filename": "images/plot.png",
+        "title": "Approximation Comparison",
+        "xlabel": "Ellipse Ratio (a/b)",
+        "ylabel": "Error (%)"
+    },
+    "test": {
+        "data": {
+            "dimensions": 2,
+            "min_value": 0.5,
+            "max_value": 20.5, 
+            "step": 0.5,
+            "precision": 10
+        }
+    },
+    "interface": {
+        "cli": {
+            "enabled": true,
+            "events": {
+                "PROGRAM_STARTED": true,
+                "APPROX_TESTED": true,
+                "APPROX_SUBMITTED": true,
+                "PROGRAM_FINISHED": true
+            }
+        },
+        "fileio": {
+            "enabled": true,
+            "events": {
+                "PROGRAM_STARTED": true,
+                "APPROX_SUBMITTED": true
+            }
+        },
+        "email": {
+            "enabled": true,
+            "events": {
+                "APPROX_SUBMITTED": true
+            },
+            "kwargs": {
+                "dev_email": "AlgoTradeRuntimeReport@gmail.com",
+                "dev_password": "",
+                "recipient_email": "bargeaaron@gmail.com",
+                "benchmarks": ["Simple", "MattParker1", "Ramanujan1", "Ramanujan2"]
+            }
+        }
+    }
+}
