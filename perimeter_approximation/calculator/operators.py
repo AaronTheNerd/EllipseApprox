@@ -44,7 +44,7 @@ SUB_OP = Operator(
     "ops.SUB_OP", 2, lambda a, b: a - b, lambda a, b: False, lambda a, b: f"({a}-{b})"
 )
 MUL_OP = Operator(
-    "ops.MUL_OP", 2, lambda a, b: a * b, lambda a, b: b == 1, lambda a, b: f"({a}\\times{b})"
+    "ops.MUL_OP", 2, lambda a, b: a * b, lambda a, b: b == 1, lambda a, b: f"({{{a}}}\\times{{{b}}})"
 )
 DIV_OP = Operator(
     "ops.DIV_OP",
