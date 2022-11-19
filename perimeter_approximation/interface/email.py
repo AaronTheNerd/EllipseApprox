@@ -7,7 +7,7 @@ Copyright 2022
 
 import os
 from test_approx import test_approximation
-import yagmail
+import yagmail # type: ignore
 from configs import CONFIGS
 from functools import partial
 from interface.event import Event, EventContext
@@ -123,8 +123,9 @@ class Email(Interface):
         
         if len(filtered_benchmarks) == 0 and len(self.benchmarks) > 0:
             return
-
-        plot([approx for x in filtered_benchmarks if (approx := APPROXIMATES[x]) is not None] + [ctx.calc])
+        approxes = {x : approx for x in filtered_benchmarks if (approx := APPROXIMATES[x]) is not None}
+        approxes["Generated"] = ctx.calc
+        plot(approxes)
         if len(filtered_benchmarks) > 0:
             for beaten in filtered_benchmarks:
                 self.benchmarks.remove(beaten)
