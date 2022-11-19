@@ -1,4 +1,5 @@
-images/*
+images/plot.png
 output/*
 performance
 plot.mplstyle
+latex/
