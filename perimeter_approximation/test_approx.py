@@ -1,7 +1,6 @@
 from typing import Optional
 
-import numpy as np
-
+import numpy as np  # type: ignore
 from calculator.calculator import Calculator
 from configs import CONFIGS
 from data import TEST_DATA
@@ -13,7 +12,7 @@ def test_approximation(calc: Calculator, test_data: list[tuple[float, ...]] = TE
     for *axises, actual in test_data:
         ellipse = EllipseProperties(*axises)
         calc_perimeter = calc.calculate(ellipse)
-        total_square_error += abs(calc_perimeter - actual)
+        total_square_error += 100 * abs(calc_perimeter - actual)
         if max_value is not None and max_value < total_square_error:
             return max_value
     if not isinstance(total_square_error, (int, float, np.floating)):
