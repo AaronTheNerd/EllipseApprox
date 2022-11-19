@@ -213,24 +213,225 @@ APPROXIMATES.register(
             EllipseProperties.a,
             EllipseProperties.b,
             ops.ADD_OP,
-            ops.MUL_OP, # [pi(a + b)]
-            ops.INV_OP, # [1/(pi(a + b))]
+            ops.MUL_OP,  # [pi(a + b)]
+            ops.INV_OP,  # [1/(pi(a + b))]
             6,
-            EllipseProperties.h, # [1/(pi(a + b)), 6, h]
-            ops.ADD_OP, # [1/(pi(a + b)), h + 6,]
-            10, # [1/(pi(a + b)), h + 6, 10]
-            ops.SUB_OP, # [1/(pi(a + b)), 10 - (h + 6)]
-            ops.SQRT_OP, # [1/(pi(a + b)), sqrt(10 - (h + 6))]
-            3, # [1/(pi(a + b)), sqrt(10 - (h + 6)), 3]
-            ops.SUB_OP, # [1/(pi(a + b)), 3 - sqrt(10 - (h + 6))]
-            ops.DIV_OP, # pi(a + b)(3 - sqrt(10 - (h + 6))) == Ramanujan's First Ellipse Approximation
+            EllipseProperties.h,  # [1/(pi(a + b)), 6, h]
+            ops.ADD_OP,  # [1/(pi(a + b)), h + 6,]
+            10,  # [1/(pi(a + b)), h + 6, 10]
+            ops.SUB_OP,  # [1/(pi(a + b)), 10 - (h + 6)]
+            ops.SQRT_OP,  # [1/(pi(a + b)), sqrt(10 - (h + 6))]
+            3,  # [1/(pi(a + b)), sqrt(10 - (h + 6)), 3]
+            ops.SUB_OP,  # [1/(pi(a + b)), 3 - sqrt(10 - (h + 6))]
+            ops.DIV_OP,  # pi(a + b)(3 - sqrt(10 - (h + 6))) == Ramanujan's First Ellipse Approximation
         ]
     ),  # test: 17.315086733143538, PID: 4963
+)
+
+APPROXIMATES.register(
+    "First",
+    Calculator(
+        [
+            math.pi,
+            EllipseProperties.a,
+            EllipseProperties.b,
+            ops.ADD_OP,
+            ops.MUL_OP,
+            math.pi,
+            6,
+            ops.EXP_OP,
+            math.pi,
+            ops.DIV_OP,
+            EllipseProperties.h,
+            7,
+            3,
+            EllipseProperties.h,
+            5,
+            6,
+            ops.DIV_OP,
+            9,
+            ops.SUB_OP,
+            ops.SUB_OP,
+            ops.MUL_OP,
+            ops.EXP_OP,
+            ops.EXP_OP,
+            ops.EXP_OP,
+            ops.MUL_OP,
+        ]
+    ),  # test: 909.1790136
+)
+
+APPROXIMATES.register(
+    "Second",
+    Calculator(
+        [
+            math.pi,
+            EllipseProperties.a,
+            EllipseProperties.b,
+            ops.ADD_OP,
+            ops.MUL_OP,
+            2,
+            EllipseProperties.h,
+            ops.DIV_OP,
+            1,
+            3,
+            ops.INV_OP,
+            8,
+            9,
+            EllipseProperties.h,
+            2,
+            2,
+            ops.DIV_OP,
+            ops.SUB_OP,
+            ops.ADD_OP,
+            ops.DIV_OP,
+            ops.MUL_OP,
+            ops.SQRT_OP,
+            ops.ADD_OP,
+            ops.EXP_OP,
+            ops.MUL_OP,
+        ]
+    ),  # test: 814.3767363
+)
+
+APPROXIMATES.register(
+    "Third",
+    Calculator(
+        [
+            math.pi,
+            EllipseProperties.a,
+            EllipseProperties.b,
+            ops.ADD_OP,
+            ops.MUL_OP,
+            2,
+            EllipseProperties.h,
+            ops.DIV_OP,
+            1,
+            3,
+            ops.INV_OP,
+            8,
+            6,
+            1,
+            6,
+            EllipseProperties.h,
+            ops.ADD_OP,
+            ops.INV_OP,
+            ops.ADD_OP,
+            ops.EXP_OP,
+            ops.DIV_OP,
+            ops.ADD_OP,
+            ops.ADD_OP,
+            ops.EXP_OP,
+            ops.MUL_OP,
+        ]
+    ),  # test: 777.5604136
+)
+
+APPROXIMATES.register(
+    "Fourth",
+    Calculator(
+        [
+            math.pi,
+            EllipseProperties.a,
+            EllipseProperties.b,
+            ops.ADD_OP,
+            ops.MUL_OP,
+            7,
+            EllipseProperties.h,
+            ops.ADD_OP,
+            7,
+            9,
+            8,
+            4,
+            ops.SQRT_OP,
+            8,
+            ops.SUB_OP,
+            ops.DIV_OP,
+            ops.SQRT_OP,
+            EllipseProperties.h,
+            ops.MUL_OP,
+            ops.DIV_OP,
+            3,
+            ops.EXP_OP,
+            ops.DIV_OP,
+            ops.MUL_OP,
+            ops.MUL_OP,
+        ]
+    ),  # test: 778.9895021
+)
+
+APPROXIMATES.register(
+    "Fifth",
+    Calculator(
+        [
+            math.pi,
+            EllipseProperties.a,
+            EllipseProperties.b,
+            ops.ADD_OP,
+            ops.MUL_OP,
+            ops.INV_OP,
+            EllipseProperties.h,
+            8,
+            4,
+            ops.EXP_OP,
+            ops.SQRT_OP,
+            ops.INV_OP,
+            8,
+            10,
+            ops.MUL_OP,
+            ops.SUB_OP,
+            EllipseProperties.h,
+            ops.DIV_OP,
+            6,
+            ops.SQRT_OP,
+            math.pi,
+            ops.DIV_OP,
+            ops.SUB_OP,
+            ops.EXP_OP,
+            ops.DIV_OP,
+        ]
+    ),  # test: 767.8231809
+)
+
+APPROXIMATES.register(
+    "Seventh",
+    Calculator(
+        [
+            math.pi,
+            EllipseProperties.a,
+            EllipseProperties.b,
+            ops.ADD_OP,
+            ops.MUL_OP,
+            ops.INV_OP,
+            EllipseProperties.h,
+            8,
+            4,
+            ops.EXP_OP,
+            ops.SQRT_OP,
+            ops.INV_OP,
+            8,
+            10,
+            ops.MUL_OP,
+            ops.ADD_OP,
+            EllipseProperties.h,
+            ops.SQRT_OP,
+            ops.DIV_OP,
+            7,
+            9,
+            ops.DIV_OP,
+            ops.SUB_OP,
+            ops.EXP_OP,
+            ops.DIV_OP,
+        ]
+    ),  # test: 1318.637151
 )
 
 
 if __name__ == "__main__":
     from utils import percent_error
+
+    e = EllipseProperties(20, 1)
+    print(e.circumference(20))
 
     def test_stack(name, calc, ellipse):
         calc_perimeter = calc.calculate(ellipse)
