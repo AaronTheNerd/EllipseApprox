@@ -92,6 +92,8 @@ class Calculator:
 
     def to_latex(self) -> str:
         stack = deque()
+        if len(self.stack) == 0:
+            return ""
         for curr in self.stack:
             if callable(curr):
                 stack.append(curr.__name__)
