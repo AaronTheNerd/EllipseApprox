@@ -221,7 +221,7 @@ When the "precision" property is set in `configs.json`, it determines how many t
 
 > The Calculator object is incredibly important as it allows the program to model something as complicated as a mathematical formula as a simple data structure.
 
-The Calculator object is a simple implementation of a stack based calculator. A stack based calculator is simply a list of constants and functions that finds a result by performing the following algorithm:
+The Calculator object is an implementation of a stack based calculator. A stack based calculator is simply a list of constants and functions that finds a result by performing the following algorithm:
 
 1. Iterate through the list.
 2. If the current element is a constant, add it to the number stack.
